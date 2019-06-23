@@ -19,8 +19,8 @@ import { connect } from 'react-redux';
     switch(action.type === 'CHANGE_TITLE'){
       case CHANGE_TITLE:
         return {...state, appTitle: action.payload};
+        default: return state;
     }
-    return state;
   }
 
   export const store = createStore(rootReducer);
