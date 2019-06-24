@@ -14,54 +14,60 @@ import { connect } from 'react-redux';
   }
 
   const CHANGE_TITLE = 'CHANGE_TITLE';
+  const TOGGLE_HANDLER = 'TOGGLE_HANDLER';
+  const HANDLE_MARKED = 'HANDLE_MARKED';
 
   const rootReducer = (state = initialState, action) => {
     switch(action.type){
       case CHANGE_TITLE:
         return {...state, appTitle: action.payload};
+      case TOGGLE_HANDLER:
+        return {...state, visible: action.payload};
+        case HANDLE_MARKED:
+        return {...state, visible: action.payload};
         default: return state;
     }
   }
 
   export const store = createStore(rootReducer);
 
-  // function Car(props) {
+  function Car(props) {
 
-  //   const classes =['card'];
-  //   if(props.car.marked){
-  //     classes.push('marked')
-  //   }
+    const classes =['card'];
+    if(props.car.marked){
+      classes.push('marked')
+    }
 
-  //   return (
-  //     <div className={classes.join(' ')} onClick={props.onMark}>
-  //       <div className='card-img'>
-  //         <img 
-  //           src={props.car.img} 
-  //           alt={props.car.name} />
-  //         </div>
-  //         <h3>{props.car.name}</h3>
-  //         <p>{props.car.price} $</p>
-  //       </div>
-  //     );
-  //   };
+    return (
+      <div className={classes.join(' ')} onClick={props.onMark}>
+        <div className='card-img'>
+          <img 
+            src={props.car.img} 
+            alt={props.car.name} />
+          </div>
+          <h3>{props.car.name}</h3>
+          <p>{props.car.price} $</p>
+        </div>
+      );
+    };
 
-    // const handleMarked = (name) => {
-    //   const cars = initialState.cars.concat();
-    //   const car = cars.find((c) => c.name === name);
-    //   car.marked = !car.marked;
-    //   this.setState({cars});
-    // }
+    const handleMarked = (name) => {
+      const cars = initialState.cars.concat();
+      const car = cars.find((c) => c.name === name);
+      car.marked = !car.marked;
+      this.setState({cars});
+    }
   
-    // const toggleHandler = () => {
-    //   setState({visible: !initialState.visible});
-    // }
+    const toggleHandler = (visible) => {
+      return {
+        type: TOGGLE_HANDLER,
+        payload: !visible
+      }
+    }
   
-    // const renderCars = () => {
-    //   if(!initialState.visible){
-    //     return null;
-    //   }
-    //   return (initialState.cars.map((car) => (<Car car={car} key={car.ID} onMark={handleMarked.bind(this, car.name)} />)));
-    // }
+    const renderCars = () => {
+      return (initialState.cars.map((car) => (<Car car={car} key={car.ID} onMark={() => handleMarked(car.name)} />)));
+    }
   
   const titleChangeHandler = (title) => {
     return {
@@ -74,13 +80,15 @@ import { connect } from 'react-redux';
 
   render = () => {
       const {titleChangeHandler} = this.props;
+      const {toggleHandler} = this.props;
+      const {visible} = this.props;
       return (
         <div className='app'>
           <h1>{this.props.appTitle}</h1>
-          {/* <button className='btn' onClick={() => this.toggleHandler()}>Toggle</button> */}
+          <button className='btn' onClick={() => toggleHandler(visible)}>Toggle</button>
           <input type='text' value={this.props.appTitle} placeholder='Change title' className='inp' onChange={(event) => titleChangeHandler(event.target.value)} />
           <div className='list'>  
-            {/* {renderCars()} */}
+            {(visible) ? renderCars() : null}
           </div>
         </div>
       );
@@ -89,13 +97,16 @@ import { connect } from 'react-redux';
 
   const putActionsToProps = (dispatch) => {
     return {
-      titleChangeHandler: bindActionCreators(titleChangeHandler, dispatch)
+      titleChangeHandler: bindActionCreators(titleChangeHandler, dispatch),
+      toggleHandler: bindActionCreators(toggleHandler, dispatch),
+      renderCars: bindActionCreators(renderCars, dispatch)
     };
   }
 
   const putStateToProps = (state) => {
     return {
-      appTitle: state.appTitle
+      appTitle: state.appTitle,
+      visible: state.visible
     };
   }
 
