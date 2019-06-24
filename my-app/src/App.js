@@ -16,7 +16,7 @@ import { connect } from 'react-redux';
   const CHANGE_TITLE = 'CHANGE_TITLE';
 
   const rootReducer = (state = initialState, action) => {
-    switch(action.type === 'CHANGE_TITLE'){
+    switch(action.type){
       case CHANGE_TITLE:
         return {...state, appTitle: action.payload};
         default: return state;
