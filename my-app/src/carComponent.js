@@ -1,13 +1,7 @@
 import React from 'react';
 export default function Car(props) {
-  
-    const classes =['card'];
-    if(props.car.marked){
-      classes.push('marked')
-    }
-  
     return (
-      <div className={classes.join(' ')} onClick={props.onMark}>
+      <div className={props.className} onClick={props.onMark}>
         <div className='card-img'>
           <img 
             src={props.car.img} 
