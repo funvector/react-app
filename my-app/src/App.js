@@ -4,9 +4,6 @@ import { connect } from 'react-redux';
 import { rootReducer } from './redux-app/reducer';
 import { toggleHandler, renderCars, titleChangeHandler } from './redux-app/actions';
 
-  export const CHANGE_TITLE = 'CHANGE_TITLE';
-  export const TOGGLE_HANDLER = 'TOGGLE_HANDLER';
-
   export const store = createStore(rootReducer);
 
   class App extends React.Component{
@@ -20,7 +17,7 @@ import { toggleHandler, renderCars, titleChangeHandler } from './redux-app/actio
         <div className='app'>
           <h1>{this.props.appTitle}</h1>
           <button className='btn' onClick={this.toggleHandler}>Toggle</button>
-          <input type='text' value={this.props.appTitle} placeholder='Change title' className='inp' onChange={this.titleChangeHandler} />
+          <input type='text' maxLength="50" value={this.props.appTitle} placeholder='Change title' className='inp' onChange={this.titleChangeHandler} />
           <div className='list'>  
             {(visible) ? renderCars() : null}
           </div>

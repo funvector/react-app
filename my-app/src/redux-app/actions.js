@@ -1,10 +1,14 @@
 import React from 'react';
 import Car from '../carComponent';
-import { CHANGE_TITLE, TOGGLE_HANDLER } from '../App';
 import { initialState } from './reducer';
 
-export const toggleHandler = (visible) => {
-  return ((visible) ? {type: TOGGLE_HANDLER, payload: !visible} : {type: TOGGLE_HANDLER, payload: visible});
+export const CHANGE_TITLE = 'CHANGE_TITLE';
+export const TOGGLE_HANDLER = 'TOGGLE_HANDLER';
+
+export const toggleHandler = () => {
+  return {
+    type: TOGGLE_HANDLER
+  }
 }
 
 export const renderCars = () => {

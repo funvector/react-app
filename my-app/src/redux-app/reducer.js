@@ -1,4 +1,4 @@
-import { CHANGE_TITLE, TOGGLE_HANDLER } from '../App';
+import { CHANGE_TITLE, TOGGLE_HANDLER } from './actions';
 
 export const initialState = {
   cars: [
@@ -16,7 +16,7 @@ export const rootReducer = (state = initialState, action) => {
     case CHANGE_TITLE:
       return {...state, appTitle: action.payload};
     case TOGGLE_HANDLER:
-      return {...state, visible: action.payload};
+      return {...state, visible: !state.visible};
       default: return state;
   }
 }
