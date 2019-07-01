@@ -184,25 +184,4 @@ class Caunter extends Component {
   decrement(){
     store.dispatch(this.DECREMENT)
   }
-  
-  render() {
-    const count = store.getState().count;
-    return (
-      <Fragment>
-        <span>
-          {count}
-        </span>
-        <div>
-          <button onClick={this.decrement}>
-            -
-          </button>
-          <button onClick={this.increment}>
-            +
-          </button>
-        </div>
-      </Fragment>
-    )
-  }
 }
-
-ReactDOM.render(<Caunter />, document.getElementById('root'));
