@@ -142,8 +142,7 @@
 
 // !
 
-import React, { Fragment, Component } from 'react';
-import ReactDOM from 'react-dom'
+import { Component } from 'react';
 import createStore from './counter';
 
 const initialState = {
