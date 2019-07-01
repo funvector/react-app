@@ -31,7 +31,7 @@ store.getState()
 
 // getState
 
-const isDispatching = true;
+let isDispatching = true;
 let currentState = initialState;
 let currentListeners = [];
 let nextListeners = currentListeners;
@@ -82,6 +82,32 @@ function subscribe(listener) {
     ensureCanMutateNextListeners()
     const index = nextListeners.indexOf(listener)
     nextListeners.splice(index, 1)
+  }
+}
+
+// observable
+function observable() {
+  const outerSubscribe = subscribe;
+  return {
+    subscribe(observer) {
+      if (typeof observer !== 'object' || observer === null) {
+        throw new TypeError('Expected the observer to be an object.')
+      }
+
+      function observeState() {
+        if (observer.next) {
+          observer.next(getState())
+        }
+      }
+
+      observeState()
+      const unsubscribe = outerSubscribe(observeState)
+      return { unsubscribe }
+    },
+
+    [$$observable]() {
+      return this
+    }
   }
 }
 
