@@ -1,0 +1,92 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.card {
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  transition: box-shadow .3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, .15);
+}
+
+.card.marked {
+  border-color: crimson;
+}
+
+.card-img {
+  display: flex;
+  align-items: center;
+  height: 150px;
+}
+
+.card img {
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+}
+
+.btn {
+  color: rgb(1, 1, 73);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  min-width: 10em;
+  min-height: 5em;
+  display: block;
+  outline: none;
+  margin:0 auto 4em auto;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn:hover{
+  background-color: #000;
+  color: orangered;
+}
+
+.inp{
+  outline: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
+.inp:focus{
+  border: 1px solid red;
+}

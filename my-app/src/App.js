@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CarsList from './apps/CarsList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component{
 
-export default App;
+  toggleHandler = () => this.props.toggleHandler();
+  titleChangeHandler = (event) => this.props.titleChangeHandler(event.target.value);
+
+  render = () => {
+      const { visible } = this.props;
+      return (
+        <div className='app'>
+          <h1>{this.props.appTitle}</h1>
+          <button className='btn' onClick={this.toggleHandler}>Toggle</button>
+          <input type='text' maxLength="50" value={this.props.appTitle} placeholder='Change title' className='inp' onChange={this.titleChangeHandler} />
+          <div className='list'>  
+            {(visible) ? <CarsList /> : null}
+          </div>
+        </div>
+      );
+    }
+  }
+
+  export default App;
