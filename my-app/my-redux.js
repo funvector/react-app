@@ -164,23 +164,3 @@ const INCREMENT = {type: 'INCREMENT'};
 const DECREMENT = {type: 'DECREMENT'};
 
 const store = createStore(reducer, initialState);
-
-class Caunter extends Component {
-  constructor(props){
-    super(props);
-    this._increment = this._increment.bind(this);
-    this._decrement = this._decrement.bind(this);
-  }
-
-  componentDidMount() {
-    store.subscribe(() => this.forceUpdate())
-  }
-
-  increment(){
-    store.dispatch(this.INCREMENT)
-  }
-
-  decrement(){
-    store.dispatch(this.DECREMENT)
-  }
-}

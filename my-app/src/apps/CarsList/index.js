@@ -1,3 +1,3 @@
-import CarsList from './CarListContainer'
+import CarsList from './CarsListContainer'
 
 export default CarsList
