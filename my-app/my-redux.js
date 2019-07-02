@@ -142,7 +142,6 @@
 
 // !
 
-import { Component } from 'react';
 import createStore from './counter';
 
 const initialState = {
