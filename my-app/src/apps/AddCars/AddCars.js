@@ -24,7 +24,7 @@ export default class AddCars extends Component{
           <h3>ADD PRICE</h3>
             <input type='text' className='inp' onChange={this.inputAddPriceHandler} />
           </label>
-          <button type='button' className='btn btn-add_cars' onClick={this.addCarsHandler}>Add</button>
+          <button type='submit' className='btn btn-add_cars' onClick={this.addCarsHandler}>Add</button>
         </form>
         <Link to='../../App.js'>TO MAIN PAGE</Link>
       </Fragment>
