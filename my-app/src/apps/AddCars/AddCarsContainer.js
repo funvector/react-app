@@ -6,10 +6,11 @@ import { addCarsHandler, inputAddLinkHandler, inputAddModelHandler, inputAddPric
 export default connect(
   (state) => ({
     addCars: addCars(state)
-  },{
+  }),
+  {
     addCarsHandler,
     inputAddLinkHandler,
     inputAddModelHandler,
-    inputAddPriceHandler
-  })
+    inputAddPriceHandler,
+  },
 )(AddCars);
