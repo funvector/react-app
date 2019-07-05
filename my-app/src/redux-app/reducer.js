@@ -19,11 +19,11 @@ export const rootReducer = (state = initialState, action) => {
     case TOGGLE_HANDLER:
       return {...state, visible: !state.visible};
     case PUSH_CARS_LINK:
-      return {...state, addCars: {...action.payload}};
+      return {...state, addCars: {...state.addCars,...action.payload}};
     case PUSH_CARS_NAME:
-      return {...state, addCars: {...action.payload}};
+      return {...state, addCars: {...state.addCars,...action.payload}};
     case PUSH_CARS_PRICE:
-      return {...state, addCars: {...action.payload}};
+      return {...state, addCars: {...state.addCars,...action.payload}};
     case ADD_CARS:
       return {...state, cars: state.cars.concat(state.addCars)};
     default: return state;
