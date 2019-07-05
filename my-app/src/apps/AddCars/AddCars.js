@@ -2,15 +2,11 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 export default class AddCars extends Component{
-  constructor(props){
-    super(props);
-    this.carsData = {};
-  }
 
-  // addCarsHandler = () => this.props.addCarsHandler();
-  // inputAddLinkHandler = () => this.props.inputAddLinkHandler();
-  // inputAddModelHandler = () => this.props.inputAddModelHandler();
-  // inputAddPriceHandler = () => this.props.inputAddPriceHandler();
+  inputAddLinkHandler = (event) => this.props.inputAddLinkHandler(event.target.value);
+  inputAddModelHandler = (event) => this.props.inputAddModelHandler(event.target.value);
+  inputAddPriceHandler = (event) => this.props.inputAddPriceHandler(event.target.value);
+  addCarsHandler = () => this.props.addCarsHandler();
 
   render() {
     return (

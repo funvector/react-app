@@ -1,6 +1,7 @@
 export const CHANGE_TITLE = 'CHANGE_TITLE';
 export const TOGGLE_HANDLER = 'TOGGLE_HANDLER';
 export const ADD_CARS = 'ADD_CARS';
+export const PUSH_CARS = 'PUSH_CARS';
 
 export const toggleHandler = () => {
   return {
@@ -15,30 +16,30 @@ export const titleChangeHandler = (title) => {
   }
 }
 
-// inputAddLinkHandler = () => {
-//   return {
-//     type: ADD_CARS,
-//     payload: 
-//   }
-// };
+export const inputAddLinkHandler = (link) => {
+  return {
+    type: PUSH_CARS,
+    payload: {img: link}
+  }
+};
 
-// inputAddModelHandler = () => {
-//   return {
-//     type: ADD_CARS,
-//     payload: 
-//   }
-// };
+export const inputAddModelHandler = (modelNmae) => {
+  return {
+    type: PUSH_CARS,
+    payload: {name: modelNmae}
+  }
+};
 
-// inputAddPriceHandler = () => {
-//   return {
-//     type: ADD_CARS,
-//     payload: 
-//   }
-// };
+export const inputAddPriceHandler = (price) => {
+  return {
+    type: PUSH_CARS,
+    payload: {price: price}
+  }
+};
 
-// export const addCarsHandler = (newCars) => {
-//   return {
-//     type: ADD_CARS,
-//     payload: newCars
-//   }
-// }
+export const addCarsHandler = () => {
+  return {
+    type: ADD_CARS,
+    payload: null
+  }
+}
