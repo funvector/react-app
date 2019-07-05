@@ -37,8 +37,7 @@ export const inputAddPriceHandler = (price) => {
   }
 };
 
-export const addCarsHandler = (event) => {
-  event.preventDefoult();
+export const addCarsHandler = () => {
   return {
     type: ADD_CARS
   }
