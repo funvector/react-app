@@ -1,3 +1,3 @@
-import AddCars from './AddCars';
+import AddCars from './AddCarsContainer';
 
 export default AddCars

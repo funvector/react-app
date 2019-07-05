@@ -11,5 +11,5 @@ export default connect(
     inputAddLinkHandler,
     inputAddModelHandler,
     inputAddPriceHandler
-  })(AddCars)
-);
+  })
+)(AddCars);
