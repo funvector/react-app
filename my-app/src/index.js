@@ -14,8 +14,7 @@ ReactDOM.render(<Provider store={store}>
   <Router>
     <Switch>
       <Route exact path='/' component={App}/>
-      <Route exact path='/src/App.js' component={App}/>
-      <Route exact path='/src/apps/AddCars/index.js' component={AddCars}/>
+      <Route exact path='/new' component={AddCars}/>
     </Switch>
   </Router>
 </Provider>, document.getElementById('root'));

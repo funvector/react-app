@@ -1,3 +1,4 @@
+import { getRandomId } from './selectors';
 export const CHANGE_TITLE = 'CHANGE_TITLE';
 export const TOGGLE_HANDLER = 'TOGGLE_HANDLER';
 export const ADD_CARS = 'ADD_CARS';
@@ -18,7 +19,7 @@ export const titleChangeHandler = (title) => {
   }
 }
 
-export const inputAddLinkHandler = (link) => {
+export const onLinkChange = (link) => {
   return {
     type: PUSH_CARS_LINK,
     payload: {img: link}
@@ -28,14 +29,14 @@ export const inputAddLinkHandler = (link) => {
 export const inputAddModelHandler = (modelNmae) => {
   return {
     type: PUSH_CARS_NAME,
-    payload: {name: modelNmae}
+    payload: {model: modelNmae}
   }
 };
 
 export const inputAddPriceHandler = (price) => {
   return {
     type: PUSH_CARS_PRICE,
-    payload: {price: price, id: (() => Math.floor(Math.random()*(1000000-1+1))+1)()}
+    payload: {price: price, id: getRandomId()}
   }
 };
 

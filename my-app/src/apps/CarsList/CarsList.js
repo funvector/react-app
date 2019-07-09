@@ -7,9 +7,9 @@ export default class CarsList extends React.Component{
           <div className='card-img'>
             <img 
               src={car.img} 
-              alt={car.name} />
+              alt={car.model} />
             </div>
-            <h3>{car.name}</h3>
+            <h3>{car.model}</h3>
             <p>{car.price} $</p>
           </div>
         )

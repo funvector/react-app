@@ -1,7 +1,7 @@
 import AddCars from './AddCars';
 import { connect } from 'react-redux';
-import { addCars } from '../../redux-app/selectors';
-import { addCarsHandler, inputAddLinkHandler, inputAddModelHandler, inputAddPriceHandler } from '../../redux-app/actions';
+import { addCars } from './../../redux-app/selectors';
+import { addCarsHandler, onLinkChange, inputAddModelHandler, inputAddPriceHandler } from '../../redux-app/actions';
 
 export default connect(
   (state) => ({
@@ -9,7 +9,7 @@ export default connect(
   }),
   {
     addCarsHandler,
-    inputAddLinkHandler,
+    onLinkChange,
     inputAddModelHandler,
     inputAddPriceHandler,
   },

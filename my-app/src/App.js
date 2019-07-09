@@ -17,7 +17,7 @@ class App extends React.Component{
           <div className='list'>  
             {(visible) ? <CarsList /> : null}
           </div>
-          <Link to='../src/apps/AddCars/index.js' className='btn btn-add_cars'>Add cars +</Link>
+          <Link to='/new' className='btn btn-add_cars'>Add cars +</Link>
         </div>
       );
     }
