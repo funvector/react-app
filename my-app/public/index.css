@@ -7,6 +7,10 @@ body {
   min-height: 100vh;
 }
 
+#root{
+  text-align: center;
+}
+
 .app {
   max-width: 1000px;
   margin: 50px auto;
@@ -14,7 +18,7 @@ body {
 
 .list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-flow: row wrap;
 }
 
@@ -57,11 +61,11 @@ h1{
   -o-border-radius: 10px;
   border-radius: 10px;
   border: 1px solid grey;
-  min-width: 10em;
-  min-height: 5em;
+  min-width: 8em;
+  min-height: 4em;
   display: block;
   outline: none;
-  margin:0 auto 4em auto;
+  margin:2em auto 2em auto;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
@@ -72,6 +76,14 @@ h1{
 .btn:hover{
   background-color: #000;
   color: orangered;
+}
+
+.btn-add_cars{
+  max-width: 4em;
+  min-height: 0;
+  padding: 1em;
+  background-color: lightgrey;
+  text-align: center;
 }
 
 .inp{
@@ -89,4 +101,8 @@ h1{
 
 .inp:focus{
   border: 1px solid red;
+}
+
+a{
+  text-decoration: none;
 }
