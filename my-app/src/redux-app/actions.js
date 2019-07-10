@@ -5,19 +5,20 @@ export const ADD_CARS = 'ADD_CARS';
 export const PUSH_CARS_LINK = 'PUSH_CARS_LINK';
 export const PUSH_CARS_NAME = 'PUSH_CARS_NAME';
 export const PUSH_CARS_PRICE = 'PUSH_CARS_LINK';
+export const MARKED_HANDLER = 'MARKED_HANDLER';
 
 export const toggleHandler = () => {
   return {
     type: TOGGLE_HANDLER
   }
-}
+};
 
 export const titleChangeHandler = (title) => {
   return {
     type: CHANGE_TITLE,
     payload: title
   }
-}
+};
 
 export const onLinkChange = (link) => {
   return {
@@ -44,4 +45,4 @@ export const addCarsHandler = () => {
   return {
     type: ADD_CARS
   }
-}
+};

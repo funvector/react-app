@@ -1,6 +1,7 @@
 import React from 'react';
 import CarsList from './apps/CarsList';
 import { Link } from 'react-router-dom';
+import FilterForm from './apps/FilterForm/FilterForm';
 
 class App extends React.Component{
 
@@ -17,6 +18,7 @@ class App extends React.Component{
           <div className='list'>  
             {(visible) ? <CarsList /> : null}
           </div>
+          <FilterForm />
           <Link to='/new' className='btn btn-add_cars'>Add cars +</Link>
         </div>
       );

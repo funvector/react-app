@@ -3,14 +3,14 @@ import { getRandomId } from './selectors';
 
 export const initialState = {
   cars: [
-    {model: 'BMW M2 Coupe', price: '20000', img: 'https://mochamanstyle.com/wp-content/uploads/2015/10/2016-BMW-M2-Coupe.jpg', id: getRandomId()},
-    {model: 'Audi TT', price: '15000', img: 'https://article.images.consumerreports.org/w_598,h_436/prod/content/dam/cro/news_articles/cars/2016-Audi-TT-pr-1-2016-598', id: getRandomId()},
-    {model: 'Rolls Royce', price: '150000', img: 'https://www.cstatic-images.com/car-pictures/xl/usc80rrc041a01300.png', id: getRandomId()},
-    {model: 'Mercedes amg coupe', price: '38000', img: 'https://auto.ndtvimg.com/car-images/big/mercedes-amg/gle-coupe/mercedes-amg-gle-coupe.jpg?v=2', id: getRandomId()}
+    {marked: false, model: 'Audi TT', price: '15000', img: 'http://tuninga.ru/upload/iblock/692/2014_tt_coupe.png', id: getRandomId()},
+    {marked: false, model: 'BMW X5', price: '30000', img: 'https://cars-specs.com/wp-content/uploads/2012/11/x5m.jpg', id: getRandomId()},
+    {marked: false, model: 'Lamborghini Urus', price: '450000', img: 'https://www.supercarreport.com/wp-content/uploads/2019/03/7-1.jpg', id: getRandomId()},
+    {marked: false, model: 'Mercedes amg coupe', price: '48000', img: 'https://auto.ndtvimg.com/car-images/big/mercedes-amg/gle-coupe/mercedes-amg-gle-coupe.jpg?v=2', id: getRandomId()}
   ],
-  addCars: {model: '', price: '', img: '', id: null},
+  addCars: {marked: false, model: '', price: '', img: '', id: null},
   visible: true,
-  appTitle: 'Cars app'
+  appTitle: 'CARS APP'
 }
 
 export const rootReducer = (state = initialState, action) => {
