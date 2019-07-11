@@ -6,6 +6,8 @@ export const PUSH_CARS_LINK = 'PUSH_CARS_LINK';
 export const PUSH_CARS_NAME = 'PUSH_CARS_NAME';
 export const PUSH_CARS_PRICE = 'PUSH_CARS_LINK';
 export const MARKED_HANDLER = 'MARKED_HANDLER';
+export const FILTER_MODEL = 'FILTER_MODEL';
+export const FILTER_PRICE = 'FILTER_PRICE';
 
 export const toggleHandler = () => {
   return {
@@ -37,12 +39,26 @@ export const inputAddModelHandler = (modelNmae) => {
 export const inputAddPriceHandler = (price) => {
   return {
     type: PUSH_CARS_PRICE,
-    payload: {price: price, id: getRandomId()}
+    payload: {price, id: getRandomId()}
   }
 };
 
 export const addCarsHandler = () => {
   return {
     type: ADD_CARS
+  }
+};
+
+export const inputFilterModelHandler = (model) => {
+  return {
+    type: FILTER_MODEL,
+    payload: {model}
+  }
+};
+
+export const inputFilterPriceHandler = (price) => {
+  return {
+    type: FILTER_PRICE,
+    payload: {price}
   }
 };

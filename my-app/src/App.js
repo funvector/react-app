@@ -1,7 +1,7 @@
 import React from 'react';
 import CarsList from './apps/CarsList';
 import { Link } from 'react-router-dom';
-import FilterForm from './apps/FilterForm/FilterForm';
+import FilterForm from './apps/FilterForm/FilterFormContainer';
 
 class App extends React.Component{
 

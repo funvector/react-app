@@ -6,7 +6,7 @@ export default class FilterForm extends Component{
   inputFilterPriceHandler = (event) => this.props.inputFilterPriceHandler(event.target.value);
 
   render() {
-    // const {  } = this.props;
+    const { getFilters } = this.props;
     return (
       <Fragment>
         <form>
@@ -14,14 +14,14 @@ export default class FilterForm extends Component{
           <div className='filetrs-form'>
             <label>
             <h4>ENTER MODEL</h4>
-              <input type='text' className='inp' onChange={this.inputFilterModelHandler}/>
+              <input type='text' className='inp' onChange={this.inputFilterModelHandler} value={getFilters.model}/>
             </label>
             <label>
             <h4>ENTER PRICE</h4>
-              <input type='text' className='inp' onChange={this.inputFilterPriceHandler} />
+              <input type='text' className='inp' onChange={this.inputFilterPriceHandler} value={getFilters.price}/>
             </label>
             <label className='checkbox'>
-              <input type='checkbox' /*onChange={} value={}*/ />
+              <input type='checkbox' /*onClick={} value={}*/ />
               <h4 className='checkbox__text'>MARKED?</h4>
             </label>
           </div>
