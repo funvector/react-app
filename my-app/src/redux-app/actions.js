@@ -49,6 +49,12 @@ export const addCarsHandler = () => {
   }
 };
 
+// export const handleMarked = (item) => {
+//   return {
+//     type: MARKED_HANDLER
+//   }
+// };
+
 export const inputFilterModelHandler = (model) => {
   return {
     type: FILTER_MODEL,

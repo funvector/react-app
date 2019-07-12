@@ -1,10 +1,10 @@
 import React from 'react';
-import { getRandomId } from './../../redux-app/selectors';
 
 export default class CarsList extends React.Component{
+
   render() {
     return this.props.cars.map((car) => (
-        <div className='card effect8' key={car.id = getRandomId()}>
+        <div className='card effect8' key={car.id}>
           <div className='card-img'>
             <img 
               src={car.img} 

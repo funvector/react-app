@@ -18,7 +18,7 @@ export default class FilterForm extends Component{
             </label>
             <label>
             <h4>ENTER PRICE</h4>
-              <input type='text' className='inp' onChange={this.inputFilterPriceHandler} value={getFilters.price}/>
+              <input type='number' className='inp' onChange={this.inputFilterPriceHandler} value={getFilters.price}/>
             </label>
             <label className='checkbox'>
               <input type='checkbox' /*onClick={} value={}*/ />

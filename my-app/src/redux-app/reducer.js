@@ -19,10 +19,9 @@ export const rootReducer = (state = initialState, action) => {
     case CHANGE_TITLE:
       return {...state, appTitle: action.payload};
     case FILTER_MODEL:
-      // return  {...state, ...Object.assign({}, state, {cars: state.cars.filter((car) => car.model === action.payload.model)})};
-      return {...state, filters: {...state.filters,...action.payload}, cars: state.cars.map((car) => (car.model === state.filters.model) ? state.cars.filter((car) => car.model === state.filters.model) : state.cars)};
+      return {...state, filters: {...state.filters,...action.payload}};
     case FILTER_PRICE:
-      return {...state, filters: {...state.filters,...action.payload}, cars: state.cars.map((car) => (car.price === state.filters.price) ? state.cars.filter((car) => car.price === state.filters.price) : state.cars)};
+      return {...state, filters: {...state.filters,...action.payload}};
     case TOGGLE_HANDLER:
       return {...state, visible: !state.visible};
     case PUSH_CARS_LINK:
