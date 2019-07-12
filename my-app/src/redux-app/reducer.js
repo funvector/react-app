@@ -3,7 +3,7 @@ import { getRandomId } from './selectors';
 
 export const initialState = {
   cars: [
-    {marked: false, model: 'Audi TT', price: '15000', img: 'http://tuninga.ru/upload/iblock/692/2014_tt_coupe.png', id: getRandomId()},
+    {marked: false, model: 'Audi TT', price: '15000', img: 'https://www.whatcar.com/car-leasing/images/imagery/large/10753.jpg', id: getRandomId()},
     {marked: false, model: 'BMW X5', price: '30000', img: 'https://cars-specs.com/wp-content/uploads/2012/11/x5m.jpg', id: getRandomId()},
     {marked: false, model: 'Lamborghini Urus', price: '450000', img: 'https://www.supercarreport.com/wp-content/uploads/2019/03/7-1.jpg', id: getRandomId()},
     {marked: false, model: 'Mercedes amg coupe', price: '48000', img: 'https://auto.ndtvimg.com/car-images/big/mercedes-amg/gle-coupe/mercedes-amg-gle-coupe.jpg?v=2', id: getRandomId()}
