@@ -1,4 +1,4 @@
-import { CHANGE_TITLE, TOGGLE_HANDLER, ADD_CARS, PUSH_CARS_LINK, PUSH_CARS_NAME, PUSH_CARS_PRICE, FILTER_MODEL, FILTER_PRICE } from './actions';
+import { CHANGE_TITLE, TOGGLE_HANDLER, ADD_CARS, PUSH_CARS_LINK, PUSH_CARS_NAME, PUSH_CARS_PRICE, FILTER_MODEL, FILTER_PRICE, MARKED_HANDLER } from './actions';
 import { getRandomId } from './selectors';
 
 export const initialState = {
@@ -26,6 +26,8 @@ export const rootReducer = (state = initialState, action) => {
       return {...state, visible: !state.visible};
     case PUSH_CARS_LINK:
       return {...state, addCars: {...state.addCars,...action.payload}};
+    // case MARKED_HANDLER:
+    //   return {...state, addCars: {...state.addCars,...action.payload}};
     case PUSH_CARS_NAME:
       return {...state, addCars: {...state.addCars,...action.payload}};
     case PUSH_CARS_PRICE:
