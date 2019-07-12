@@ -28,16 +28,20 @@ body {
   padding: 10px;
   margin: 10px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 5%;
   transition: box-shadow .3s ease-in-out;
   background-color: #fff;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
 }
 
 .card:hover {
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, .15);
+  box-shadow: 2px 2px 0 orangered;
 }
 
-.card.marked {
+.card-marked {
   border-color: crimson;
 }
 
@@ -53,6 +57,10 @@ body {
 
 h1{
   text-align: center;
+  color: rgb(88, 0, 88);
+  text-shadow: -2px 2px 0px #00e6e6,
+  -4px 4px 0px #01cccc,
+  -6px 6px 0px #00bdbd;
 }
 
 .btn {
@@ -99,6 +107,7 @@ h1{
   padding: 5px;
   display: block;
   margin: 0 auto;
+  background-color: whitesmoke;
 }
 
 .inp:focus{
@@ -111,7 +120,8 @@ a{
 
 .filters-h3{
   margin: 2em 0 0 0;
-  color: orangered;
+  color: deepskyblue;
+  text-shadow: -1px -1px 5px black;
 }
 
 .filetrs-form{
@@ -169,4 +179,37 @@ a{
 }
 .checkbox input:checked + .checkbox__text:after {
   left: 26px;
+}
+
+.effect8
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect8:before, .effect8:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:0;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.effect8:after
+{
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
 }

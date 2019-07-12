@@ -19,12 +19,8 @@ export const rootReducer = (state = initialState, action) => {
     case CHANGE_TITLE:
       return {...state, appTitle: action.payload};
     case FILTER_MODEL:
-      if(action.payload.model.length > 0){
-      return  Object.assign({}, state, {cars: state.cars.filter((car) => car.model === action.payload.model)});
-      } else {
-        return state
-      }
-      // return {...state, filters: {...state.filters,...action.payload}, cars: state.cars.map((car) => (car.model === state.filters.model) ? state.cars.filter((car) => car.model === state.filters.model) : state.cars)};
+      // return  {...state, ...Object.assign({}, state, {cars: state.cars.filter((car) => car.model === action.payload.model)})};
+      return {...state, filters: {...state.filters,...action.payload}, cars: state.cars.map((car) => (car.model === state.filters.model) ? state.cars.filter((car) => car.model === state.filters.model) : state.cars)};
     case FILTER_PRICE:
       return {...state, filters: {...state.filters,...action.payload}, cars: state.cars.map((car) => (car.price === state.filters.price) ? state.cars.filter((car) => car.price === state.filters.price) : state.cars)};
     case TOGGLE_HANDLER:
