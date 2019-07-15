@@ -49,11 +49,12 @@ export const addCarsHandler = () => {
   }
 };
 
-// export const handleMarked = (item) => {
-//   return {
-//     type: MARKED_HANDLER
-//   }
-// };
+export const handleMarked = (carId) => {
+  return {
+    type: MARKED_HANDLER,
+    payload: carId
+  }
+};
 
 export const inputFilterModelHandler = (model) => {
   return {

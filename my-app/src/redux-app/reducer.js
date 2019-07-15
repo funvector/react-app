@@ -26,8 +26,8 @@ export const rootReducer = (state = initialState, action) => {
       return {...state, visible: !state.visible};
     case PUSH_CARS_LINK:
       return {...state, addCars: {...state.addCars,...action.payload}};
-    // case MARKED_HANDLER:
-    //   return {...state, addCars: {...state.addCars,...action.payload}};
+    case MARKED_HANDLER:
+      return {...state, cars: state.cars.map((car) => (car.id === action.payload)? {...car, marked: !car.marked} : car)};
     case PUSH_CARS_NAME:
       return {...state, addCars: {...state.addCars,...action.payload}};
     case PUSH_CARS_PRICE:
