@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: linear-gradient(90deg, #1FA2FF, #12D8FA, #A6FFCB);
+  background-image: linear-gradient(90deg, #000000, #434343);
 }
 
 #root{
@@ -27,13 +27,14 @@ body {
   width: 200px;
   padding: 10px;
   margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5%;
+  border: 2px solid #ccc;
   transition: box-shadow .3s ease-in-out;
   -webkit-border-radius: 5%;
   -moz-border-radius: 5%;
   -ms-border-radius: 5%;
   -o-border-radius: 5%;
+  border-radius: 5%;
+  background-color: #fff;
 }
 
 .card:hover {
@@ -136,6 +137,14 @@ a{
 
 .filetrs-form label{
   flex: 1;
+}
+
+.filetrs-form label h4, h3{
+  color: cyan;
+}
+
+.card h3{
+  color: #000e;
 }
 
 .filetrs-form label:nth-child(2){
