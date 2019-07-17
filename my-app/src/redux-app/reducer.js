@@ -10,7 +10,6 @@ export const initialState = {
   ],
   addCars: {marked: false, model: '', price: '', img: '', id: null},
   visible: true,
-  filterCheked: false,
   appTitle: 'CARS APP',
   filters: {model: '', price: '', marked: false}
 }
@@ -26,7 +25,7 @@ export const rootReducer = (state = initialState, action) => {
     case TOGGLE_HANDLER:
       return {...state, visible: !state.visible};
     case CHEKED_HANDLER:
-      return {...state, filterCheked: !state.filterCheked};
+      return {...state, filters: {...state.filters, marked: !state.filters.marked}};
     case PUSH_CARS_LINK:
       return {...state, addCars: {...state.addCars,...action.payload}};
     case MARKED_HANDLER:

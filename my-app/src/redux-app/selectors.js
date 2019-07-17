@@ -1,8 +1,11 @@
+import { createSelector } from 'reselect';
 export const getAppTitle     = (state) => state.appTitle;
 export const isVisible       = (state) => state.visible;
-export const getFilterCheked = (state) => state.filterCheked;
-export const getCars         = (state) => state.cars.filter((car) => car.model.toUpperCase().includes(state.filters.model.toUpperCase()) && car.price >= Number(state.filters.price || '0'));
+export const getCars         = (state) => state.cars;
 export const getAddCars      = (state) => state.addCars;
 export const getFilters      = (state) => state.filters;
-export const isMarked        = (state) => state.cars.map((car) => car.marked)
 export const getRandomId     = () => Math.floor(Math.random()*(1000000-1+1))+1;
+export const getFilteredCars    = createSelector(
+  [getCars, getFilters],
+  (cars, filters) => cars.filter((car) => car.model.toUpperCase().includes(filters.model.toUpperCase()) && car.price >= Number(filters.price || '0') && (filters.marked === true ? car.marked : true))
+);

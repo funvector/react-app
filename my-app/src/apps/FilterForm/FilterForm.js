@@ -9,7 +9,7 @@ export default class FilterForm extends Component{
 
   render() {
     
-    const { getFilters, getFilterCheked } = this.props;
+    const { getFilters } = this.props;
 
     // let labelCheckboxFilter = classNames('checkbox', this.props.className, {
     //   '.checkbox input:checked + .checkbox__text:before .checkbox input:checked + .checkbox__text:after': getFilterCheked.getFilterCheked === true
@@ -29,7 +29,7 @@ export default class FilterForm extends Component{
               <input type='number' className='inp' onChange={this.inputFilterPriceHandler} value={getFilters.price}/>
             </label>
             <label className='checkbox'>
-              <input type='checkbox' onChange={this.filterChekedHandler} checked={getFilterCheked.getFilterCheked}/>
+              <input type='checkbox' onChange={this.filterChekedHandler} checked={getFilters.marked}/>
               <h4 className='checkbox__text'>MARKED?</h4>
             </label>
           </div>
