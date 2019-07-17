@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-// import classNames from 'classnames';
 
 export default class FilterForm extends Component{
 
@@ -10,10 +9,6 @@ export default class FilterForm extends Component{
   render() {
     
     const { getFilters } = this.props;
-
-    // let labelCheckboxFilter = classNames('checkbox', this.props.className, {
-    //   '.checkbox input:checked + .checkbox__text:before .checkbox input:checked + .checkbox__text:after': getFilterCheked.getFilterCheked === true
-    // });
 
     return (
       <Fragment>

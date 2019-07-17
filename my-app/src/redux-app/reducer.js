@@ -1,5 +1,6 @@
 import { CHANGE_TITLE, TOGGLE_HANDLER, ADD_CARS, PUSH_CARS_LINK, PUSH_CARS_NAME, PUSH_CARS_PRICE, FILTER_MODEL, FILTER_PRICE, MARKED_HANDLER, CHEKED_HANDLER } from './actions';
 import { getRandomId } from './selectors';
+// import { combineReducers } from 'redux';
 
 export const initialState = {
   cars: [
