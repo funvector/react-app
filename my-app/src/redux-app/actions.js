@@ -1,13 +1,14 @@
 import { getRandomId } from './selectors';
-export const CHANGE_TITLE = 'CHANGE_TITLE';
-export const TOGGLE_HANDLER = 'TOGGLE_HANDLER';
-export const ADD_CARS = 'ADD_CARS';
-export const PUSH_CARS_LINK = 'PUSH_CARS_LINK';
-export const PUSH_CARS_NAME = 'PUSH_CARS_NAME';
+export const CHANGE_TITLE    = 'CHANGE_TITLE';
+export const TOGGLE_HANDLER  = 'TOGGLE_HANDLER';
+export const ADD_CARS        = 'ADD_CARS';
+export const PUSH_CARS_LINK  = 'PUSH_CARS_LINK';
+export const PUSH_CARS_NAME  = 'PUSH_CARS_NAME';
 export const PUSH_CARS_PRICE = 'PUSH_CARS_LINK';
-export const MARKED_HANDLER = 'MARKED_HANDLER';
-export const FILTER_MODEL = 'FILTER_MODEL';
-export const FILTER_PRICE = 'FILTER_PRICE';
+export const MARKED_HANDLER  = 'MARKED_HANDLER';
+export const FILTER_MODEL    = 'FILTER_MODEL';
+export const FILTER_PRICE    = 'FILTER_PRICE';
+export const CHEKED_HANDLER  = 'CHEKED_HANDLER'
 
 export const toggleHandler = () => {
   return {
@@ -69,3 +70,9 @@ export const inputFilterPriceHandler = (price) => {
     payload: {price}
   }
 };
+
+export const filterChekedHandler = () => {
+  return {
+    type: CHEKED_HANDLER
+  }
+}

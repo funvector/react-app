@@ -5,7 +5,7 @@ import FilterForm from './apps/FilterForm/FilterFormContainer';
 
 class App extends React.Component{
 
-  toggleHandler = () => this.props.toggleHandler();
+  toggleHandler      = () => this.props.toggleHandler();
   titleChangeHandler = (event) => this.props.titleChangeHandler(event.target.value);
 
   render = () => {
