@@ -1,5 +1,5 @@
 import { PUSH_CARS_LINK, PUSH_CARS_NAME, PUSH_CARS_PRICE, ADD_CARS } from './actions';
-import { getRandomId } from './selectors';
+import { getRandomId } from './../selectors';
 
 const initialState = {
   cars: [

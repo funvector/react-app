@@ -7,5 +7,6 @@ export const getAddCars      = (state) => state.addCars;
 export const getFilters      = (state) => state.filters;
 export const getFilteredCars = createSelector(
   [getCars, getFilters],
-  (cars, filters) => cars.filter((car) => car.model.toUpperCase().includes(filters.model.toUpperCase()) && car.price >= Number(filters.price || '0') && (filters.marked === true ? car.marked : true))
-);
+  (cars, filters) => cars.filter((car) => {
+   return ((filters.model !== '' && ' ') ? car.model.toUpperCase() === filters.model.toUpperCase() : true && (filters.price !== '' && '0') ? Number(car.price) === Number(filters.price) : true && (filters.marked === true) ? car.marked : true)
+  }));

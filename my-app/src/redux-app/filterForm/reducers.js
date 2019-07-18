@@ -1,5 +1,5 @@
 import { FILTER_MODEL, MARKED_HANDLER, FILTER_PRICE, CHEKED_HANDLER } from './actions';
-import { getRandomId } from './selectors';
+import { getRandomId } from './../selectors';
 
 const initialState = {
   cars: [
