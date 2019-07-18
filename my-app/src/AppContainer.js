@@ -4,8 +4,6 @@ import { titleChangeHandler } from './redux-app/appTitle/actions';
 import { connect } from 'react-redux';
 import { getAppTitle, isVisible } from './redux-app/selectors';
 
-
-
 export default connect(
   (state) => ({
     appTitle: getAppTitle(state),
