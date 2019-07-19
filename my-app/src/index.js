@@ -9,7 +9,6 @@ import AddCars from './apps/AddCars/index';
 import * as serviceWorker from './serviceWorker';
 
 export const store = createStore(rootReducer);
-console.log(store.getState());
 
 ReactDOM.render(<Provider store={store}>
   <Router>
