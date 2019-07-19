@@ -1,7 +1,7 @@
 import AddCars from './AddCars';
 import { connect } from 'react-redux';
 import { getAddCars } from './../../redux-app/selectors';
-import { addCarsHandler, onLinkChange, inputAddModelHandler, inputAddPriceHandler } from '../../redux-app/actions';
+import { addCarsHandler, onLinkChange, inputAddModelHandler, inputAddPriceHandler } from './../../redux-app/filterForm/actions';
 
 export default connect(
   (state) => ({

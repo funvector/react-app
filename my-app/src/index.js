@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { rootReducer } from './redux-app/reducer';
+import rootReducer from './redux-app/reducer';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './AppContainer';
 import AddCars from './apps/AddCars/index';

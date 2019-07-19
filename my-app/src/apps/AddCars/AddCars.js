@@ -10,6 +10,7 @@ export default class AddCars extends Component{
 
   render() {
     const { addCars } = this.props;
+    
     return (
       <Fragment>
         <form>
