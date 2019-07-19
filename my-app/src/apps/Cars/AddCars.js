@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 
 export default class AddCars extends Component{
 
-  onLinkChange = (event) => this.props.onLinkChange(event.target.value);
+  onLinkChange         = (event) => this.props.onLinkChange(event.target.value);
   inputAddModelHandler = (event) => this.props.inputAddModelHandler(event.target.value);
   inputAddPriceHandler = (event) => this.props.inputAddPriceHandler(event.target.value);
-  addCarsHandler = () => this.props.addCarsHandler();
+  addCarsHandler       = () => this.props.addCarsHandler();
 
   render() {
     const { addCars } = this.props;
+    
     return (
       <Fragment>
         <form>

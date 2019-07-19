@@ -1,11 +1,13 @@
 import CarsList from './CarsList';
 import { connect } from 'react-redux';
-import { getCars } from '../../redux-app/selectors';
-
+import { getFilteredCars } from './../../redux-app/selectors';
+import { handleMarked } from './../../redux-app/filterForm/actions';
 
 export default connect(
   (state) => ({
-    cars: getCars(state)
+    cars: getFilteredCars(state)
   }),
-  null,
+  {
+    handleMarked
+  }
 )(CarsList);
