@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import rootReducer from './redux-app/reducer';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './AppContainer';
-import AddCars from './apps/AddCars/index';
+import AddCars from './apps/Cars/index';
 import * as serviceWorker from './serviceWorker';
 
 export const store = createStore(rootReducer);
