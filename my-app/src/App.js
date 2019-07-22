@@ -1,9 +1,9 @@
-import React from 'react';
-import CarsList from './apps/CarsList';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import CarsList from './apps/CarsList';
 import FilterForm from './apps/FilterForm/FilterFormContainer';
 
-class App extends React.Component{
+class App extends Component{
 
   toggleHandler      = () => this.props.toggleHandler();
   titleChangeHandler = (event) => this.props.titleChangeHandler(event.target.value);
@@ -11,16 +11,19 @@ class App extends React.Component{
   render = () => {
       const { visible } = this.props;
       return (
-        <div className='app'>
-          <h1>{this.props.appTitle}</h1>
-          <input type='text' maxLength="50" value={this.props.appTitle} className='inp' onChange={this.titleChangeHandler} />
-          <button className='btn' onClick={this.toggleHandler}>Toggle</button>
-          <div className='list'>  
-            {(visible) ? <CarsList /> : null}
+        <Fragment>
+          <div className='app'>
+            <Link to='/' className='btn-regForm'>LOG OUT</Link>
+            <h1>{this.props.appTitle}</h1>
+            <input type='text' maxLength="50" value={this.props.appTitle} className='inp' onChange={this.titleChangeHandler} />
+            <button className='btn' onClick={this.toggleHandler}>Toggle</button>
+            <div className='list'>  
+              {(visible) ? <CarsList /> : null}
+            </div>
+            <FilterForm />
+            <Link to='/new' className='btn btn-add_cars'>Add cars +</Link>
           </div>
-          <FilterForm />
-          <Link to='/new' className='btn btn-add_cars'>Add cars +</Link>
-        </div>
+        </Fragment>
       );
     }
   }

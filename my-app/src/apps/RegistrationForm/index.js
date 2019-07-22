@@ -1,3 +1,3 @@
-// import  from '';
+import RegistrationForm from './RegistrationFormContainer';
 
-// export default 
+export default RegistrationForm;
