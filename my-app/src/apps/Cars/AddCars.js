@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import React, { Component, Fragment } from 'react';
 
 export default class AddCars extends Component{
 
@@ -13,6 +13,7 @@ export default class AddCars extends Component{
     
     return (
       <Fragment>
+        <Link to='/' className='btn-regForm'>LOG OUT</Link>
         <form>
           <label>
           <h3>ADD LINK TO IMG</h3>
