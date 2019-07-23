@@ -5,6 +5,7 @@ export const isVisible       = (state) => state.toggleButtonHandlerR.visible;
 export const getCars         = (state) => state.filterFormR.cars;
 export const getAddCars      = (state) => state.filterFormR.addCars;
 export const getFilters      = (state) => state.filterFormR.filters;
+export const getLogin        = (state) => state.loginFormR.login;
 export const getFilteredCars = createSelector(
   [getCars, getFilters],
   (cars, filters) => cars.filter((car) => {
