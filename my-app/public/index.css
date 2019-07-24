@@ -255,6 +255,7 @@ a{
 }
 
 fieldset{
+  padding: 2em;
   border: 1px double #551A8B;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;

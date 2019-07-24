@@ -1,4 +1,3 @@
-import { getLogin } from './../../redux-app/selectors';
 export const ADD_EMAIL     = 'ADD_EMAIL';
 export const ADD_PASSWORD  = 'ADD_PASSWORD';
 export const LOGIN_SBMT    = 'LOGIN_SBMT';
@@ -10,19 +9,15 @@ export const inputAddEmailHandler = (email) => {
   }
 };
 
-export const inputAddPasswordHandler = (pass) => {
+export const inputAddPasswordHandler = (password) => {
   return {
     type: ADD_PASSWORD,
-    payload: {pass}
+    payload: {password}
   }
 };
 
 export const logInSbmtHandler = (event) => {
-  if(getLogin.email && getLogin.password === ''){
-    event.preventDefoult();
-  } else {
-    return {
-      type: LOGIN_SBMT
-    }
+  return {
+    type: LOGIN_SBMT
   }
 };

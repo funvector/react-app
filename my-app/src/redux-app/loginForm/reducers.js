@@ -11,7 +11,7 @@ export default function loginFormR(state = initialState, action) {
     case ADD_PASSWORD:
       return {...state, login: {...state.login,...action.payload}};
     case LOGIN_SBMT:
-      return {...state};
+      return state;
     default: return state;
   }
 };
