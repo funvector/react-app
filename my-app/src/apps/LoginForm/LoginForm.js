@@ -9,7 +9,7 @@ export default class LoginForm extends Component{
 
   render() {
 
-    const { getLogin } = this.props;
+    // const { getLoginValue } = this.props;
     
     return (
       <Fragment>
@@ -18,14 +18,14 @@ export default class LoginForm extends Component{
             <legend className='regFormLegend'>WELL HELLO THERE</legend>
             <label>
             <h4 className='regFormh4'>ENTER YOUR EMAIL</h4>
-              <input type='email' className='inp' onChange={this.inputAddEmailHandler} value={getLogin.email}/>
+              <input type='email' className='inp' onChange={this.inputAddEmailHandler} /*value={getLoginValue.email}*//>
             </label>
             <label>
             <h4 className='regFormh4'>ENTER YOUR PASSWORD</h4>
-              <input type='password' className='inp' onChange={this.inputAddPasswordHandler} value={getLogin.password}/>
+              <input type='password' className='inp' onChange={this.inputAddPasswordHandler} /*value={getLoginValue.password}*//>
             </label>
             <Link to='/app'>
-              <button type='button' className='btn' onClick={this.logInSbmtHandler} disabled={false}>LOG IN</button>
+              <button type='button' className='btn' onClick={this.logInSbmtHandler} /*disabled={!getLoginValue.password || !getLoginValue.email}*/>LOG IN</button>
             </Link>
           </fieldset>
         </form>

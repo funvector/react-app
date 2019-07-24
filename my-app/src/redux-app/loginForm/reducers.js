@@ -6,12 +6,12 @@ const initialState = {
 
 export default function loginFormR(state = initialState, action) {
   switch(action.type){
-  case ADD_EMAIL:
-    return {...state, login: {...state.login,...action.payload}};
-  case ADD_PASSWORD:
-    return {...state, login: {...state.login,...action.payload}};
-  case LOGIN_SBMT:
-    return ;
-  default: return state;
+    case ADD_EMAIL:
+      return {...state, login: {...state.login,...action.payload}};
+    case ADD_PASSWORD:
+      return {...state, login: {...state.login,...action.payload}};
+    case LOGIN_SBMT:
+      return {...state};
+    default: return state;
   }
 };

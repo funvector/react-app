@@ -5,7 +5,7 @@ import { inputAddEmailHandler, inputAddPasswordHandler, logInSbmtHandler } from 
 
 export default connect(
   (state) => ({
-    getLogin: getLogin(state)
+    getLoginValue: getLogin(state)
   }),
   {
     inputAddEmailHandler,
