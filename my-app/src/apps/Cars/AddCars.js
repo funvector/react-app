@@ -13,7 +13,7 @@ export default class AddCars extends Component{
     
     return (
       <Fragment>
-        <Link to='/' className='btn-regForm'>LOG OUT</Link>
+        <Link to='/' className='btn-regFormLogout'>LOG OUT</Link>
         <form>
           <label>
           <h3>ADD LINK TO IMG</h3>

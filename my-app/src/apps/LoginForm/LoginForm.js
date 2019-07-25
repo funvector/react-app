@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 
 export default class LoginForm extends Component{
 
-  inputAddEmailHandler    = (event) => this.props.inputAddEmailHandler(event.target.value.trim());
-  inputAddPasswordHandler = (event) => this.props.inputAddPasswordHandler(event.target.value.trim());
+  inputAddEmailHandler    = (event) => this.props.inputAddEmailHandler(event.target.value);
+  inputAddPasswordHandler = (event) => this.props.inputAddPasswordHandler(event.target.value);
   logInSbmtHandler        = (event) => this.props.logInSbmtHandler(event);
+  inputPasswordIsValid    = () => this.props.inputPasswordIsValid();
+  inputEmailIsValid       = () => this.props.inputEmailIsValid();
 
   render() {
 
     const { getLoginValue } = this.props;
+    console.log(getLoginValue);
     
     return (
       <Fragment>
@@ -18,14 +21,19 @@ export default class LoginForm extends Component{
             <legend className='regFormLegend'>WELL HELLO THERE</legend>
             <label>
             <h4 className='regFormh4'>ENTER EMAIL</h4>
-              <input type='email' className='inp' onChange={this.inputAddEmailHandler} placeholder='email: admin@test.com' value={getLoginValue.email}/>
+              <input type='email' className='inp' onChange={this.inputAddEmailHandler} onBlur={this.inputEmailIsValid} placeholder='email: admin@test.com' value={getLoginValue.email}/>
             </label>
             <label>
             <h4 className='regFormh4'>ENTER PASSWORD</h4>
-              <input type='password' className='inp' onChange={this.inputAddPasswordHandler} placeholder='8+ symbols (without spaces)' value={getLoginValue.password}/>
+              <input type='password' className='inp' onChange={this.inputAddPasswordHandler} onBlur={this.inputPasswordIsValid} placeholder='8+ symbols (without spaces)' value={getLoginValue.password}/>
             </label>
             <Link to='/app'>
-              <button type='button' className='btn' onClick={this.logInSbmtHandler} disabled={!getLoginValue.password || !getLoginValue.email || getLoginValue.email.indexOf('@') === -1 || getLoginValue.password.length < 8}>LOG IN</button>
+              <button type='submit'
+                className='btn btn-regFormLogin'
+                onClick={this.logInSbmtHandler}
+                disabled={getLoginValue.password === false  && getLoginValue.email === false}>
+                  LOG IN
+              </button>
             </Link>
           </fieldset>
         </form>

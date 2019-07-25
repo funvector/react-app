@@ -1,7 +1,7 @@
 import LoginForm from './LoginForm';
 import { connect } from 'react-redux';
 import { getLogin } from './../../redux-app/selectors';
-import { inputAddEmailHandler, inputAddPasswordHandler, logInSbmtHandler } from './../../redux-app/loginForm/actions';
+import { inputAddEmailHandler, inputAddPasswordHandler, logInSbmtHandler, inputEmailIsValid, inputPasswordIsValid } from './../../redux-app/loginForm/actions';
 
 export default connect(
   (state) => ({
@@ -10,6 +10,8 @@ export default connect(
   {
     inputAddEmailHandler,
     inputAddPasswordHandler,
+    inputPasswordIsValid,
+    inputEmailIsValid,
     logInSbmtHandler
   },
 )(LoginForm);

@@ -227,7 +227,7 @@ a{
             transform:skew(8deg) rotate(3deg);
 }
 
-.btn-regForm{
+.btn-regFormLogout{
   color: orangered;
   text-align: center;
   position: absolute;
@@ -242,7 +242,7 @@ a{
   border: 1px dotted transparent;
 }
 
-.btn-regForm:hover{
+.btn-regFormLogout:hover{
   border: 1px double gray;
 }
 
@@ -262,4 +262,8 @@ fieldset{
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
+}
+
+.btn-regFormLogin{
+  min-width: 100%;
 }

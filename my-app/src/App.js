@@ -13,7 +13,7 @@ class App extends Component{
       return (
         <Fragment>
           <div className='app'>
-            <Link to='/' className='btn-regForm'>LOG OUT</Link>
+            <Link to='/' className='btn-regFormLogout'>LOG OUT</Link>
             <h1>{this.props.appTitle}</h1>
             <input type='text' maxLength="50" value={this.props.appTitle} className='inp' onChange={this.titleChangeHandler} />
             <button className='btn' onClick={this.toggleHandler}>Toggle</button>
