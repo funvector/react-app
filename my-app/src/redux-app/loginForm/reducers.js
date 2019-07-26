@@ -8,13 +8,14 @@ export default function loginFormR(state = initialState, action) {
   switch(action.type){
     case ADD_EMAIL_ISVALID:
       return (
-        (state.login.email !== '' && state.login.email.includes('@')) ?
+        (/^[A-Z0-9_'%=+!`#~$*?^{}&|-]+([\.][A-Z0-9_'%=+!`#~$*?^{}&|-]+)*@[A-Z0-9-]+(\.[A-Z0-9-]+)+$/i.test(state.login.email)) ?
         {...state, login: {...state.login,...action.payload, emailIsValid: true}} : 
         {...state, login: {...state.login,...action.payload, emailIsValid: false}}
       );
     case ADD_PASSWORD_ISVALID:
       return (
-        (/^[a-zA-Z0-9]{7,}$/.test(state.login.password)) ?
+        (state.login.password.length >= 8 && !state.login.password.includes(' ') && state.login.password !== '') ?
+        // (/^\S{7,}$/.test(state.login.password)) ?
         {...state, login: {...state.login,...action.payload, passwordIsValid: true}} : 
         {...state, login: {...state.login,...action.payload, passwordIsValid: false}}
       );

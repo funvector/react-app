@@ -16,7 +16,7 @@ export const inputPasswordIsValid = (password) => {
   }
 };
 
-export const logInSbmtHandler = (event) => {
+export const logInSbmtHandler = () => {
   return {
     type: LOGIN_SBMT
   }
