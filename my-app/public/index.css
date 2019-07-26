@@ -267,3 +267,18 @@ fieldset{
 .btn-regFormLogin{
   min-width: 100%;
 }
+
+.loginFormIsValid{
+  visibility: hidden;
+  text-align: center;
+  color: orangered;
+  border-left: 1px solid red;
+}
+
+.notValidEmail{
+  visibility: visible;
+}
+
+.notValidPass{
+  visibility: visible;
+}

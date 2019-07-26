@@ -1,17 +1,23 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
 export default class LoginForm extends Component{
 
-  inputAddEmailHandler    = (event) => this.props.inputAddEmailHandler(event.target.value);
-  inputAddPasswordHandler = (event) => this.props.inputAddPasswordHandler(event.target.value);
-  logInSbmtHandler        = (event) => this.props.logInSbmtHandler(event);
-  inputPasswordIsValid    = () => this.props.inputPasswordIsValid();
-  inputEmailIsValid       = () => this.props.inputEmailIsValid();
+  inputEmailIsValid    = (event) => this.props.inputEmailIsValid(event.target.value.trim());
+  inputPasswordIsValid = (event) => this.props.inputPasswordIsValid(event.target.value.trim());
+  logInSbmtHandler     = () => this.props.logInSbmtHandler();
 
   render() {
 
     const { getLoginValue } = this.props;
+    let checkValidEmail = classNames('loginFormIsValid', this.props.className, {
+      'notValidEmail': getLoginValue.emailIsValid === false
+    });
+
+    let checkValidPass = classNames('loginFormIsValid', this.props.className, {
+      'notValidPass': getLoginValue.passwordIsValid === false
+    });
     console.log(getLoginValue);
     
     return (
@@ -21,17 +27,23 @@ export default class LoginForm extends Component{
             <legend className='regFormLegend'>WELL HELLO THERE</legend>
             <label>
             <h4 className='regFormh4'>ENTER EMAIL</h4>
-              <input type='email' className='inp' onChange={this.inputAddEmailHandler} onBlur={this.inputEmailIsValid} placeholder='email: admin@test.com' value={getLoginValue.email}/>
+              <input type='email' className='inp' onChange={this.inputEmailIsValid} placeholder='email: admin@test.com' value={getLoginValue.email}/>
+              <p className={checkValidEmail}>
+                enter correct email
+              </p>
             </label>
             <label>
             <h4 className='regFormh4'>ENTER PASSWORD</h4>
-              <input type='password' className='inp' onChange={this.inputAddPasswordHandler} onBlur={this.inputPasswordIsValid} placeholder='8+ symbols (without spaces)' value={getLoginValue.password}/>
+              <input type='password' className='inp' onChange={this.inputPasswordIsValid} placeholder='8+ symbols (without spaces)' value={getLoginValue.password}/>
+              <p className={checkValidPass}>
+              enter correct password
+              </p>
             </label>
             <Link to='/app'>
               <button type='submit'
                 className='btn btn-regFormLogin'
                 onClick={this.logInSbmtHandler}
-                disabled={getLoginValue.password === false  && getLoginValue.email === false}>
+                disabled={getLoginValue.emailIsValid && getLoginValue.passwordIsValid}>
                   LOG IN
               </button>
             </Link>

@@ -1,37 +1,22 @@
-export const ADD_EMAIL     = 'ADD_EMAIL';
-export const ADD_PASSWORD  = 'ADD_PASSWORD';
-export const LOGIN_SBMT    = 'LOGIN_SBMT';
-export const EMAIL_ISVALID    = 'EMAIL_ISVALID';
-export const PASSWORD_ISVALID    = 'PASSWORD_ISVALID';
+export const LOGIN_SBMT           = 'LOGIN_SBMT';
+export const ADD_EMAIL_ISVALID    = 'ADD_EMAIL_ISVALID';
+export const ADD_PASSWORD_ISVALID = 'ADD_PASSWORD_ISVALID';
 
-export const inputAddEmailHandler = (email) => {
+export const inputEmailIsValid = (email) => {
   return {
-    type: ADD_EMAIL,
+    type: ADD_EMAIL_ISVALID,
     payload: {email}
   }
 };
 
-export const inputAddPasswordHandler = (password) => {
+export const inputPasswordIsValid = (password) => {
   return {
-    type: ADD_PASSWORD,
+    type: ADD_PASSWORD_ISVALID,
     payload: {password}
   }
 };
 
-export const inputEmailIsValid = () => {
-  return {
-    type: EMAIL_ISVALID,
-  }
-};
-
-export const inputPasswordIsValid = () => {
-  return {
-    type: PASSWORD_ISVALID
-  }
-};
-
 export const logInSbmtHandler = (event) => {
-  event.stopPropagation();
   return {
     type: LOGIN_SBMT
   }
