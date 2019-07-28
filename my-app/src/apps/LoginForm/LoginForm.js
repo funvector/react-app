@@ -4,8 +4,8 @@ import classNames from 'classnames';
 
 export default class LoginForm extends Component{
 
-  inputEmailIsValid    = (event) => this.props.inputEmailIsValid(event.target.value.trim());
-  inputPasswordIsValid = (event) => this.props.inputPasswordIsValid(event.target.value.trim());
+  inputEmailIsValid    = (event) => this.props.inputEmailIsValid(event.target.value);
+  inputPasswordIsValid = (event) => this.props.inputPasswordIsValid(event.target.value);
   logInSbmtHandler     = () => this.props.logInSbmtHandler();
 
   render() {
@@ -16,7 +16,7 @@ export default class LoginForm extends Component{
     });
 
     let checkValidPass = classNames('loginFormIsValid', this.props.className, {
-      'notValidPass': getLoginValue.passwordIsValid === false || getLoginValue.password.length < 8
+      'notValidPass': getLoginValue.passwordIsValid === false
     });
     console.log(getLoginValue);
     
@@ -43,7 +43,7 @@ export default class LoginForm extends Component{
               <button type='submit'
                 className='btn btn-regFormLogin'
                 onClick={this.logInSbmtHandler}
-                disabled={!getLoginValue.emailIsValid || !getLoginValue.passwordIsValid}>
+                disabled={!getLoginValue.emailIsValid && !getLoginValue.passwordIsValid}>
                   LOG IN
               </button>
             </Link>
