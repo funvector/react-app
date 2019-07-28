@@ -43,7 +43,7 @@ export default class LoginForm extends Component{
               <button type='submit'
                 className='btn btn-regFormLogin'
                 onClick={this.logInSbmtHandler}
-                disabled={!getLoginValue.emailIsValid && !getLoginValue.passwordIsValid}>
+                disabled={(getLoginValue.emailIsValid === false || getLoginValue.passwordIsValid === false)? true : false}>
                   LOG IN
               </button>
             </Link>
