@@ -18,11 +18,11 @@ export default class CarsList extends React.Component{
               src={car.img}
               alt={car.model}
             />
-            </div>
+          </div>
             <h3>{car.model}</h3>
             <p>{car.price} $</p>
-          </div>
-        )}
-      )
-    }
+        </div>
+      )}
+    )
   }
+}

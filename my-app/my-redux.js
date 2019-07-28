@@ -142,24 +142,24 @@
 
 // !
 
-import createStore from './counter';
+// import createStore from './counter';
 
-const initialState = {
-  count: 0
-}
+// const initialState = {
+//   count: 0
+// }
 
-function reducer(state = initialState, action){
-  switch (action.type) {
-    case 'INCREMENT':
-      return {count: state.count + 1};
-    case 'DECREMENT':
-      return {count: state.count - 1};
-    default:
-      return state;
-  }
-};
+// function reducer(state = initialState, action){
+//   switch (action.type) {
+//     case 'INCREMENT':
+//       return {count: state.count + 1};
+//     case 'DECREMENT':
+//       return {count: state.count - 1};
+//     default:
+//       return state;
+//   }
+// };
 
-const INCREMENT = {type: 'INCREMENT'};
-const DECREMENT = {type: 'DECREMENT'};
+// const INCREMENT = {type: 'INCREMENT'};
+// const DECREMENT = {type: 'DECREMENT'};
 
-const store = createStore(reducer, initialState);
+// const store = createStore(reducer, initialState);

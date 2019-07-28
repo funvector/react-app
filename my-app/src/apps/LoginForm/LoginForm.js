@@ -18,7 +18,6 @@ export default class LoginForm extends Component{
     let checkValidPass = classNames('loginFormIsValid', this.props.className, {
       'notValidPass': getLoginValue.passwordIsValid === false
     });
-    console.log(getLoginValue);
     
     return (
       <Fragment>
@@ -40,9 +39,10 @@ export default class LoginForm extends Component{
               </p>
             </label>
             <Link to='/app'>
-              <button type='submit'
-                className='btn btn-regFormLogin'
-                onClick={this.logInSbmtHandler}
+              <button 
+                type='submit' 
+                className='btn btn-regFormLogin' 
+                onClick={this.logInSbmtHandler} 
                 disabled={(getLoginValue.emailIsValid === false || getLoginValue.passwordIsValid === false)? true : false}>
                   LOG IN
               </button>

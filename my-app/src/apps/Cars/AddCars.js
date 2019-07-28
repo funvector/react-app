@@ -28,7 +28,9 @@ export default class AddCars extends Component{
             <input type='text' className='inp' onChange={this.inputAddPriceHandler} value={addCars.price} />
           </label>
           <Link to='/app'>
-            <button type='button' className='btn btn-add_cars' onClick={this.addCarsHandler} disabled={!addCars.img || !addCars.model || !addCars.price}>Add</button>
+            <button type='button' className='btn btn-add_cars' onClick={this.addCarsHandler} disabled={!addCars.img || !addCars.model || !addCars.price}>
+              Add
+            </button>
           </Link>
         </form>
         <Link to='/app'>TO MAIN PAGE</Link>
