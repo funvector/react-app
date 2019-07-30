@@ -1,4 +1,4 @@
-import { LOGIN_SBMT, ADD_EMAIL_ISVALID, ADD_PASSWORD_ISVALID } from './actions';
+import { ADD_EMAIL_ISVALID, ADD_PASSWORD_ISVALID } from './actions';
 
 const initialState = {
   login: {email: '', password: '', emailIsValid: false, passwordIsValid: false}
@@ -18,8 +18,6 @@ export default function loginFormR(state = initialState, action) {
         {...state, login: {...state.login,...action.payload, passwordIsValid: true}} : 
         {...state, login: {...state.login,...action.payload, passwordIsValid: false}}
       );
-    case LOGIN_SBMT:
-      return state;
     default: return state;
   }
 };
