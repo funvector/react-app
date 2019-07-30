@@ -9,12 +9,7 @@ import AddCars from './apps/Cars/index';
 import LoginForm  from './apps/LoginForm/index';
 import * as serviceWorker from './serviceWorker';
 
-// const logger = (state) => (next) => (action) => {
-//   console.log(action);
-//   next(action);
-// }
-
-const store = createStore(rootReducer, /*applyMiddleware(logger)*/);
+const store = createStore(rootReducer);
 
 ReactDOM.render(<Provider store={store}>
   <Router>
