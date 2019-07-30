@@ -24,7 +24,7 @@ export default class LoginForm extends Component{
     this.setState({redirect: `${value}`})
     return (this.getState('redirect')) ? <Redirect to={`/app`} /> : <Redirect to={`/`} />;
   }
-  
+
   logInSbmtHandler (event){
     event.preventDefault();
     (this.props.getLoginValue.email === this.rootLogin.rootEmail && this.props.getLoginValue.password === this.rootLogin.rootPass) ?
@@ -34,7 +34,7 @@ export default class LoginForm extends Component{
       this.renderRedirect(true);
     } else {
       this.renderRedirect(false);
-    }  
+    }
   }
 
   render() {

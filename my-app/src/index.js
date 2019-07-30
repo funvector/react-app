@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore/*, applyMiddleware*/  } from 'redux';
 import rootReducer from './redux-app/reducer';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './AppContainer';
@@ -9,7 +9,12 @@ import AddCars from './apps/Cars/index';
 import LoginForm  from './apps/LoginForm/index';
 import * as serviceWorker from './serviceWorker';
 
-export const store = createStore(rootReducer);
+// const logger = (state) => (next) => (action) => {
+//   console.log(action);
+//   next(action);
+// }
+
+const store = createStore(rootReducer, /*applyMiddleware(logger)*/);
 
 ReactDOM.render(<Provider store={store}>
   <Router>
