@@ -1,27 +1,43 @@
 import React, { Component, Fragment } from 'react';
-import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
+import PropTypes from "prop-types";
 
 const rootLogin = {
   rootEmail: 'admin@test.com',
   rootPass: '12345678'
 };
 
-class LoginForm extends Component{
+export default class LoginForm extends Component{
+
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+  };
 
   inputEmailIsValid    = (event) => this.props.inputEmailIsValid(event.target.value);
   inputPasswordIsValid = (event) => this.props.inputPasswordIsValid(event.target.value);
-
   logInSbmtHandler = (event) =>{
-    event.preventDefault();
-    localStorage.setItem('loginConfirme', JSON.stringify({session: {email: this.props.getLoginValue.email, pass: this.props.getLoginValue.password, loginDateTime: new Date()}}));
-    // (JSON.parse(localStorage.getItem('loginConfirme')).session.email ===  rootLogin.rootEmail && JSON.parse(localStorage.getItem('loginConfirme')).session.email === rootLogin.rootPass) ?
+    if(this.props.getLoginValue.password === rootLogin.rootPass && this.props.getLoginValue.email === rootLogin.rootEmail){
+      localStorage.setItem('loginConfirme', JSON.stringify({session: {isLoggedUser: true, loginDateTime: new Date()}}));
+    } else {
+      event.preventDefault();
+      if(this.props.getLoginValue.password !== rootLogin.rootPass && this.props.getLoginValue.email !== rootLogin.rootEmail){
+        alert('INCORRECT PASSWORD and EMAIL');
+      } else if(this.props.getLoginValue.password !== rootLogin.rootPass){
+        alert('INCORRECT PASSWORD');
+      } else {
+        alert('INCORRECT EMAIL');
+      }
+    }
   }
 
   render() {
 
-    const { getLoginValue, match, location, history } = this.props;
+    // const { match, location, history } = this.props;
+
+    const { getLoginValue } = this.props;
     let checkValidEmail = classNames('loginFormIsValid', this.props.className, {
       'notValidEmail': getLoginValue.emailIsValid === false
     });
@@ -64,5 +80,3 @@ class LoginForm extends Component{
     )
   }
 }
-
-export default LoginForm = withRouter(LoginForm);
