@@ -9,5 +9,8 @@ export const getLogin        = (state) => state.loginFormR.login;
 export const getFilteredCars = createSelector(
   [getCars, getFilters],
   (cars, filters) => cars.filter((car) => {
-   return ((filters.model !== '' && ' ') ? car.model.toUpperCase() === filters.model.toUpperCase() : true && (filters.price !== '' && '0') ? Number(car.price) === Number(filters.price) : true && (filters.marked === true) ? car.marked : true)
+   return ((filters.model !== '' && ' ') ? 
+   car.model.toUpperCase() === filters.model.toUpperCase() : true && (filters.price !== '' && '0') ? 
+   Number(car.price) === Number(filters.price) : true && (filters.marked === true) ? 
+   car.marked : true)
 }));

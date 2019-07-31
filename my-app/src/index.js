@@ -14,9 +14,12 @@ const store = createStore(rootReducer);
 ReactDOM.render(<Provider store={store}>
   <Router>
     <Switch>
-      <Route exact path='/' component={LoginForm}/>
-      <Route exact path='/app' component={() => ((JSON.parse(localStorage.getItem('loginConfirme')).session.isLoggedUser) ? <App /> : (<Redirect to='/'/>))}/>
-      <Route exact path='/new' component={() => ((JSON.parse(localStorage.getItem('loginConfirme')).session.isLoggedUser) ? <AddCars /> : (<Redirect to='/'/>))}/>
+      <Route exact path='/' render={() => localStorage.getItem('loginConfirm') !== null ? 
+        ((JSON.parse(localStorage.getItem('loginConfirm')).session.isLoggedUser) ? (<Redirect to='/app'/>) : <LoginForm />) : <LoginForm />}/>
+      <Route exact path='/app' render={() => localStorage.getItem('loginConfirm') !== null ? 
+        ((JSON.parse(localStorage.getItem('loginConfirm')).session.isLoggedUser) ? <App /> : (<Redirect to='/'/>)) : (<Redirect to='/'/>)}/>
+      <Route exact path='/new' render={() => localStorage.getItem('loginConfirm') !== null ? 
+        ((JSON.parse(localStorage.getItem('loginConfirm')).session.isLoggedUser) ? <AddCars /> : (<Redirect to='/'/>)) : (<Redirect to='/'/>)}/>
     </Switch>
   </Router>
 </Provider>, document.getElementById('root'));

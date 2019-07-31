@@ -3,17 +3,17 @@ import React, { Component, Fragment } from 'react';
 
 export default class AddCars extends Component{
 
-  onLinkChange         = (event) => this.props.onLinkChange(event.target.value);
-  inputAddModelHandler = (event) => this.props.inputAddModelHandler(event.target.value);
-  inputAddPriceHandler = (event) => this.props.inputAddPriceHandler(event.target.value);
-  addCarsHandler       = () => this.props.addCarsHandler();
+  onLinkChange          = (event) => this.props.onLinkChange(event.target.value);
+  inputAddModelHandler  = (event) => this.props.inputAddModelHandler(event.target.value);
+  inputAddPriceHandler  = (event) => this.props.inputAddPriceHandler(event.target.value);
+  logautBtnDeletHandler = () => this.props.logautBtnDeletHandler();
 
   render() {
     const { addCars } = this.props;
     
     return (
       <Fragment>
-        <Link to='/' className='btn-regFormLogout'>LOG OUT</Link>
+        <Link to='/' onClick={this.logautBtnDeletHandler} className='btn-regFormLogout'>LOG OUT</Link>
         <form>
           <label>
           <h3>ADD LINK TO IMG</h3>

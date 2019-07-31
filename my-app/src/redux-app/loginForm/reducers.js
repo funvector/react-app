@@ -1,4 +1,4 @@
-import { ADD_EMAIL_ISVALID, ADD_PASSWORD_ISVALID } from './actions';
+import { ADD_EMAIL_ISVALID, ADD_PASSWORD_ISVALID, CLEAR_DATA_FROM_LS } from './actions';
 
 const initialState = {
   login: {email: '', password: '', emailIsValid: false, passwordIsValid: false}
@@ -18,6 +18,8 @@ export default function loginFormR(state = initialState, action) {
         {...state, login: {...state.login,...action.payload, passwordIsValid: true}} : 
         {...state, login: {...state.login,...action.payload, passwordIsValid: false}}
       );
+    case CLEAR_DATA_FROM_LS:
+      return {...state, login: {email: '', password: '', emailIsValid: false, passwordIsValid: false}}
     default: return state;
   }
 };

@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-import PropTypes from "prop-types";
 
 const rootLogin = {
   rootEmail: 'admin@test.com',
@@ -10,17 +9,11 @@ const rootLogin = {
 
 export default class LoginForm extends Component{
 
-  static propTypes = {
-    match: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
-  };
-
   inputEmailIsValid    = (event) => this.props.inputEmailIsValid(event.target.value);
   inputPasswordIsValid = (event) => this.props.inputPasswordIsValid(event.target.value);
-  logInSbmtHandler = (event) =>{
+  logInSbmtHandler     = (event) =>{
     if(this.props.getLoginValue.password === rootLogin.rootPass && this.props.getLoginValue.email === rootLogin.rootEmail){
-      localStorage.setItem('loginConfirme', JSON.stringify({session: {isLoggedUser: true, loginDateTime: new Date()}}));
+      localStorage.setItem('loginConfirm', JSON.stringify({session: {isLoggedUser: true, loginDateTime: new Date()}}));
     } else {
       event.preventDefault();
       if(this.props.getLoginValue.password !== rootLogin.rootPass && this.props.getLoginValue.email !== rootLogin.rootEmail){
@@ -35,9 +28,8 @@ export default class LoginForm extends Component{
 
   render() {
 
-    // const { match, location, history } = this.props;
-
     const { getLoginValue } = this.props;
+    
     let checkValidEmail = classNames('loginFormIsValid', this.props.className, {
       'notValidEmail': getLoginValue.emailIsValid === false
     });
@@ -70,7 +62,7 @@ export default class LoginForm extends Component{
                 type='submit' 
                 className='btn btn-regFormLogin' 
                 onClick={this.logInSbmtHandler}
-                disabled={(getLoginValue.emailIsValid === false || getLoginValue.passwordIsValid === false)? true : false}>
+                disabled={(getLoginValue.emailIsValid === false || getLoginValue.passwordIsValid === false) ? true : false}>
                   LOG IN
               </button>
             </Link>
