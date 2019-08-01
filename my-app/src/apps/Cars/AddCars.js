@@ -7,6 +7,7 @@ export default class AddCars extends Component{
   inputAddModelHandler  = (event) => this.props.inputAddModelHandler(event.target.value);
   inputAddPriceHandler  = (event) => this.props.inputAddPriceHandler(event.target.value);
   logautBtnDeletHandler = () => this.props.logautBtnDeletHandler();
+  addCarsHandler        = () => this.props.addCarsHandler();
 
   render() {
     const { addCars } = this.props;

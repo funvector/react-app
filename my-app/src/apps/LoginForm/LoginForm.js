@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 const rootLogin = {
@@ -16,6 +15,7 @@ export default class LoginForm extends Component{
   logInSbmtHandler     = (event) =>{
     if(this.props.getLoginValue.password === rootLogin.rootPass && this.props.getLoginValue.email === rootLogin.rootEmail){
       localStorage.setItem('loginConfirm', JSON.stringify({session: {isLoggedUser: true, loginDateTime: +new Date()}}));
+      this.props.history.push('/app');
     } else {
       event.preventDefault();
       if(this.props.getLoginValue.password !== rootLogin.rootPass && this.props.getLoginValue.email !== rootLogin.rootEmail){
@@ -59,7 +59,6 @@ export default class LoginForm extends Component{
                 This field is required
               </p>
             </label>
-            <Link to='/app'>
               <button 
                 type='submit' 
                 className='btn btn-regFormLogin' 
@@ -67,7 +66,6 @@ export default class LoginForm extends Component{
                 disabled={(getLoginValue.emailIsValid === false || getLoginValue.passwordIsValid === false) ? true : false}>
                   LOG IN
               </button>
-            </Link>
           </fieldset>
         </form>
       </Fragment>
