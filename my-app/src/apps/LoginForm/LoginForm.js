@@ -7,13 +7,15 @@ const rootLogin = {
   rootPass: '12345678'
 };
 
+export const limitLoginTime = 24 * 3600 * 1000;
+
 export default class LoginForm extends Component{
 
   inputEmailIsValid    = (event) => this.props.inputEmailIsValid(event.target.value);
   inputPasswordIsValid = (event) => this.props.inputPasswordIsValid(event.target.value);
   logInSbmtHandler     = (event) =>{
     if(this.props.getLoginValue.password === rootLogin.rootPass && this.props.getLoginValue.email === rootLogin.rootEmail){
-      localStorage.setItem('loginConfirm', JSON.stringify({session: {isLoggedUser: true, loginDateTime: new Date()}}));
+      localStorage.setItem('loginConfirm', JSON.stringify({session: {isLoggedUser: true, loginDateTime: +new Date()}}));
     } else {
       event.preventDefault();
       if(this.props.getLoginValue.password !== rootLogin.rootPass && this.props.getLoginValue.email !== rootLogin.rootEmail){
