@@ -14,7 +14,7 @@ export default class LoginForm extends Component{
   inputPasswordIsValid = (event) => this.props.inputPasswordIsValid(event.target.value);
   logInSbmtHandler     = (event) =>{
     if(this.props.getLoginValue.password === rootLogin.rootPass && this.props.getLoginValue.email === rootLogin.rootEmail){
-      localStorage.setItem('loginConfirm', JSON.stringify({session: {isLoggedUser: true, loginDateTime: +new Date()}}));
+      localStorage.setItem('loginConfirm', JSON.stringify({session: {isLoggedUser: true, role: 'Admin', loginDateTime: +new Date()}}));
       this.props.history.push('/app');
     } else {
       event.preventDefault();
@@ -59,9 +59,9 @@ export default class LoginForm extends Component{
                 This field is required
               </p>
             </label>
-              <button 
-                type='submit' 
-                className='btn btn-regFormLogin' 
+              <button
+                type='submit'
+                className='btn btn-regFormLogin'
                 onClick={this.logInSbmtHandler}
                 disabled={(getLoginValue.emailIsValid === false || getLoginValue.passwordIsValid === false) ? true : false}>
                   LOG IN
