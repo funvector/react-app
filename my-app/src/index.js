@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './redux-app/reducer';
-import { HashRouter as Router, Route, Switch, Redirect  } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import App from './AppContainer';
 import AddCars from './apps/Cars/index';
 import LoginForm  from './apps/LoginForm/index';
@@ -17,40 +17,40 @@ ReactDOM.render(<Provider store={store}>
     <Switch>
       <Route exact path='/' render={() => {
         if(localStorage.getItem('loginConfirm') !== null){
-          if(JSON.parse(localStorage.getItem('loginConfirm')).session.isLoggedUser && (+new Date() - JSON.parse(localStorage.getItem('loginConfirm')).session.loginDateTime) < limitLoginTime){
-            return (<Redirect to='/app'/>);
-          } else {
-            localStorage.removeItem('loginConfirm');
-            return <LoginForm />;
-          }
-        } else {
-            return <LoginForm />;
-        }
-      }}/>
-
-      <Route exact path='/app' render={() => {
-        if(localStorage.getItem('loginConfirm') !== null){
-          if(JSON.parse(localStorage.getItem('loginConfirm')).session.isLoggedUser && (+new Date() - JSON.parse(localStorage.getItem('loginConfirm')).session.loginDateTime) < limitLoginTime){
+          if(JSON.parse(+new Date() - JSON.parse(localStorage.getItem('loginConfirm')).session.loginDateTime) < limitLoginTime){
             return <App />;
           } else {
             localStorage.removeItem('loginConfirm');
-            return (<Redirect to='/'/>);
+            return (<Redirect to='/login'/>);
           }
         } else {
-          return (<Redirect to='/'/>);
+          return <App />;
         }
       }}/>
-      
+
       <Route exact path='/new' render={() => {
         if(localStorage.getItem('loginConfirm') !== null){
-          if(JSON.parse(localStorage.getItem('loginConfirm')).session.isLoggedUser && (+new Date() - JSON.parse(localStorage.getItem('loginConfirm')).session.loginDateTime) < limitLoginTime){
+          if(JSON.parse(+new Date() - JSON.parse(localStorage.getItem('loginConfirm')).session.loginDateTime) < limitLoginTime){
             return  <AddCars />;
           } else {
             localStorage.removeItem('loginConfirm');
-            return (<Redirect to='/'/>);
+            return (<Redirect to='/login'/>);
           }
         } else {
-          return (<Redirect to='/'/>);
+          return (<Redirect to='/login'/>);
+        }
+      }}/>
+
+      <Route exact path='/login' render={() => {
+        if(localStorage.getItem('loginConfirm') !== null){
+          if(JSON.parse(+new Date() - JSON.parse(localStorage.getItem('loginConfirm')).session.loginDateTime) < limitLoginTime){
+            return (<Redirect to='/'/>);
+          } else {
+            localStorage.removeItem('loginConfirm');
+            return <LoginForm />;
+          }
+        } else {
+          return <LoginForm />;
         }
       }}/>
     </Switch>

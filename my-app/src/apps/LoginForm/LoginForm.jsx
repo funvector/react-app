@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 const rootLogin = {
@@ -14,8 +15,8 @@ export default class LoginForm extends Component{
   inputPasswordIsValid = (event) => this.props.inputPasswordIsValid(event.target.value);
   logInSbmtHandler     = (event) =>{
     if(this.props.getLoginValue.password === rootLogin.rootPass && this.props.getLoginValue.email === rootLogin.rootEmail){
-      localStorage.setItem('loginConfirm', JSON.stringify({session: {isLoggedUser: true, role: 'Admin', loginDateTime: +new Date()}}));
-      this.props.history.push('/app');
+      localStorage.setItem('loginConfirm', JSON.stringify({session: {loginDateTime: +new Date()}}));
+      this.props.history.push('/');
     } else {
       event.preventDefault();
       if(this.props.getLoginValue.password !== rootLogin.rootPass && this.props.getLoginValue.email !== rootLogin.rootEmail){
@@ -66,6 +67,11 @@ export default class LoginForm extends Component{
                 disabled={(getLoginValue.emailIsValid === false || getLoginValue.passwordIsValid === false) ? true : false}>
                   LOG IN
               </button>
+              <p>
+                <Link to='/'>
+                  TO MAIN PAGE
+                </Link>
+              </p>
           </fieldset>
         </form>
       </Fragment>
